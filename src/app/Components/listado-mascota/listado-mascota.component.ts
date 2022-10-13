@@ -15,11 +15,11 @@ export class ListadoMascotaComponent implements OnInit, AfterViewInit  {
   displayedColumns: string[] = ['nombre', 'edad', 'raza', 'color', 'peso', 'acciones'];
   dataSource = new MatTableDataSource<Mascota>();
   loading: boolean = false;
-  
+
   @ViewChild(MatPaginator) paginator!: MatPaginator
   @ViewChild(MatSort) sort!: MatSort;
-  
-  constructor(private _snackBar: MatSnackBar, 
+
+  constructor(private _snackBar: MatSnackBar,
             private _mascotaService:MascotaService) { }
 
   ngOnInit(): void {
@@ -38,7 +38,7 @@ export class ListadoMascotaComponent implements OnInit, AfterViewInit  {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
-
+//tenemos metodo me devuelve mascotas 
   obtenerMascotas() {
 
     this.loading = true;
@@ -47,7 +47,7 @@ export class ListadoMascotaComponent implements OnInit, AfterViewInit  {
       this.dataSource.data = data;
     })
   }
- 
+
 
   eliminarMascota(id: number) {
     this.loading = true;
@@ -56,7 +56,7 @@ export class ListadoMascotaComponent implements OnInit, AfterViewInit  {
      this.mensajeExito();
      this.loading = false;
      this.obtenerMascotas();
-    });    
+    });
   }
 
   mensajeExito() {

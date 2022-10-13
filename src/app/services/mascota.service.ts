@@ -3,16 +3,16 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Mascota } from '../interfaces/mascota';
-
+//importar el envirotman para poder hacer la conexion a backend
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class MascotaService {
   private myAppUrl: string = environment.endpoint;
   private myApiUrl: string = 'api/Mascota/';
-
-  constructor(private http: HttpClient) { }
-
+  // inyeccion de dependenias
+  constructor(private http: HttpClient) {}
+  //metodos
   getMascotas(): Observable<Mascota[]> {
     return this.http.get<Mascota[]>(`${this.myAppUrl}${this.myApiUrl}`);
   }
@@ -30,6 +30,9 @@ export class MascotaService {
   }
 
   updateMascota(id: number, mascota: Mascota): Observable<void> {
-    return this.http.put<void>(`${this.myAppUrl}${this.myApiUrl}${id}`, mascota);
+    return this.http.put<void>(
+      `${this.myAppUrl}${this.myApiUrl}${id}`,
+      mascota
+    );
   }
 }

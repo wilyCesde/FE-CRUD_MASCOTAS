@@ -23,11 +23,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
 // Componentes
 import { SpinnerComponent } from './spinner/spinner.component';
 
-
 @NgModule({
-  declarations: [
-    SpinnerComponent
-  ],
+  declarations: [SpinnerComponent],
   imports: [
     CommonModule,
     MatSliderModule,
@@ -44,7 +41,7 @@ import { SpinnerComponent } from './spinner/spinner.component';
     MatProgressBarModule,
     MatGridListModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   exports: [
     MatSliderModule,
@@ -62,7 +59,7 @@ import { SpinnerComponent } from './spinner/spinner.component';
     MatProgressBarModule,
     MatGridListModule,
     ReactiveFormsModule,
-    HttpClientModule
-  ]
+    HttpClientModule,
+  ],
 })
-export class SharedModule { }
+export class SharedModule {}

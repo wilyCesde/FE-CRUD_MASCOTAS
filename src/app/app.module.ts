@@ -18,15 +18,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppComponent,
     AgregarEditarMascotaComponent,
     ListadoMascotaComponent,
-    VerMascotaComponent
+    VerMascotaComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    SharedModule
+    SharedModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

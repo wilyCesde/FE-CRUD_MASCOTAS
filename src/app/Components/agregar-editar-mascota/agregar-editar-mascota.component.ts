@@ -12,6 +12,7 @@ import { MascotaService } from 'src/app/services/mascota.service';
 })
 export class AgregarEditarMascotaComponent implements OnInit {
   loading: boolean = false;
+/*   trabajar con el formuario reactivo */
   form: FormGroup;
   id: number;
 
@@ -83,7 +84,7 @@ export class AgregarEditarMascotaComponent implements OnInit {
       this.router.navigate(['/listMascotas']);
     })
   }
-
+/* boton de agregar mascota */
   agregarMascota(mascota: Mascota) {
       this._mascotaService.addMascota(mascota).subscribe(data => {
         this.mensajeExito('registrada');
